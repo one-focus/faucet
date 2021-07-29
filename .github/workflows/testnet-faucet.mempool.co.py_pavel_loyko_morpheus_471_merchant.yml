@@ -1,7 +1,6 @@
-name: Pavel Loyko
+name: Morpheus 471 merchant Pavel Loyko
 
 on:
-  push:
   schedule:
     - cron: '*/60 */2 * * *'
 jobs:
@@ -9,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        address: ["2NAQ7Ei13aeavDUKBuLhoeowMzmPMxPeMro", "2MsvkN4sRzdxuyqbp9cjTfQQK3drq2dyxF6", "2N3iMekuH351udUfwU8fsjC4jHi8PaRY89u", "2N3HPcXrDX7uchLdP1WwD91ZzGtPneukMep", "2NDFXHhrFfWXkruaMv2oNPCYwxvE5yDCipN", "2MvCDk4fRv1duKfBnHqvnoiLA93UFevGRxm", "2NEPE51JsaiMiuKqPMEfzF5ZEbSt67QZRVq", "2N2D4xiyRWKqsH4Wzhs1RFib3rzVR8KjeeZ", "2NARrozsWxY9AKU9MUWQhXHZyKDzqgs6r1G", "2MuF1xM1gZAfakbonBxGqDTzkLhjLb1yvXP"]
+        address: ["2NAQ7Ei13aeavDUKBuLhoeowMzmPMxPeMro", "2MsvkN4sRzdxuyqbp9cjTfQQK3drq2dyxF6", "2N3iMekuH351udUfwU8fsjC4jHi8PaRY89u", "2N3HPcXrDX7uchLdP1WwD91ZzGtPneukMep", "2NDFXHhrFfWXkruaMv2oNPCYwxvE5yDCipN", "2MvCDk4fRv1duKfBnHqvnoiLA93UFevGRxm", "2NEPE51JsaiMiuKqPMEfzF5ZEbSt67QZRVq", "2N2D4xiyRWKqsH4Wzhs1RFib3rzVR8KjeeZ", "2NARrozsWxY9AKU9MUWQhXHZyKDzqgs6r1G", "tb1qm4k4njjv3xye8esdzssemnjl5wmwvwjm9m0qxv"]
     steps:
       - uses: actions/checkout@v2
       - name: Cache requirements

@@ -1,7 +1,6 @@
 name: morpheus internal
 
 on:
-  push:
   schedule:
     - cron: '*/10 */2 * * *'
 jobs:

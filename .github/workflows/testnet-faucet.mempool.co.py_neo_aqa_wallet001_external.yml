@@ -1,7 +1,6 @@
 name: Neo external_001
 
 on:
-  push:
   schedule:
     - cron: '*/30 */2 * * *'
 jobs:

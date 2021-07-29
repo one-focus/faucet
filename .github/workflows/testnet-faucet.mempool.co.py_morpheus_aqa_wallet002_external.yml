@@ -1,7 +1,6 @@
 name: Morpheus external_002
 
 on:
-  push:
   schedule:
     - cron: '*/20 */2 * * *'
 jobs:
