@@ -1,3 +1,4 @@
 antigate
 pillow
 pyTelegramBotAPI
+selenium

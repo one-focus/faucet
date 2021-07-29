@@ -15,7 +15,16 @@ def get_captcha_image():
 
 if __name__ == "__main__":
     address = sys.argv[1]
-    driver = webdriver.Chrome()
+    caps = {
+        # -- Chrome browser mobile emulation and headless options
+        'goog:chromeOptions': {
+            # 'mobileEmulation': {'deviceName': 'iPhone X'},
+            # 'window-size': ['1920,1080'],
+            'args': ['headless', 'window-size=1920,1080']
+        }
+    }
+    driver = webdriver.Chrome(desired_capabilities=caps)
+
     driver.implicitly_wait(10)
     driver.get('https://testnet-faucet.mempool.co/')
     errors = []
