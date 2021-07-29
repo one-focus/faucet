@@ -2,7 +2,7 @@ name: Morpheus 471 merchant Pavel Loyko
 
 on:
   schedule:
-    - cron: '60 */2 * * *'
+    - cron: '59 */2 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
