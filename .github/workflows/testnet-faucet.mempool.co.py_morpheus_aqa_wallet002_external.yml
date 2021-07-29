@@ -1,0 +1,31 @@
+name: Morpheus external_002
+
+on:
+  push:
+  schedule:
+    - cron: '*/20 */2 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        address: ["2N74qMuUkfv3XbAZHUwYbYgpcU71yMDQe2x", 2N74qMuUkfv3XbAZHUwYbYgpcU71yMDQe2x", "2N1BxhN4j8Nff7XJzRSTPQe5nTzybDnZ5S9", "2N4YPQVhooJwPDgwZxjn6jeDDJyko4CLD58", "2N4oJSkk2ZeWtGXzF51EvfF7vMhjutzT4H9", "2N4WQBD7f3fuNiTtKtJd3HETtxd2rzRGkpU", "2N9shs4rJmFXein7fZQKND3S7x75P12qKR2", "2Mxcu2WWEnUPmj88rSMRsWsJkBh5q5ryfST", "2N4UwxXpD7dc5ZHXnCttxFHCzpkZ6qQD9d8", "2MywkhfyqathUGaN5xB36xXkvnXMHPfbdHx"]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cache requirements
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: Test with behave
+        run: |
+          python testnet-faucet.mempool.co.py "${{ matrix.address }}"

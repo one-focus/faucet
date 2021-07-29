@@ -1,0 +1,31 @@
+name: Pavel Loyko
+
+on:
+  push:
+  schedule:
+    - cron: '*/60 */2 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        address: ["2NAQ7Ei13aeavDUKBuLhoeowMzmPMxPeMro", "2MsvkN4sRzdxuyqbp9cjTfQQK3drq2dyxF6", "2N3iMekuH351udUfwU8fsjC4jHi8PaRY89u", "2N3HPcXrDX7uchLdP1WwD91ZzGtPneukMep", "2NDFXHhrFfWXkruaMv2oNPCYwxvE5yDCipN", "2MvCDk4fRv1duKfBnHqvnoiLA93UFevGRxm", "2NEPE51JsaiMiuKqPMEfzF5ZEbSt67QZRVq", "2N2D4xiyRWKqsH4Wzhs1RFib3rzVR8KjeeZ", "2NARrozsWxY9AKU9MUWQhXHZyKDzqgs6r1G", "2MuF1xM1gZAfakbonBxGqDTzkLhjLb1yvXP"]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cache requirements
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: Test with behave
+        run: |
+          python testnet-faucet.mempool.co.py "${{ matrix.address }}"

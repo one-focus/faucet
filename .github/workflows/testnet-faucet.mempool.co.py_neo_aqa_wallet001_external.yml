@@ -1,0 +1,31 @@
+name: Neo external_001
+
+on:
+  push:
+  schedule:
+    - cron: '*/30 */2 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        address: ["2Mxe4i459UwkKTpx8edCYzSsVVuzUdVxSxS", "2NBABAmXjHaeNszikrJnoCXbgufUvRf1Dar", "2N5cdrf1bUxPRntKPKA5Kptr9WBJXNFZEEn", "2NAJpxmfEsBG68b64fbmRT7LGwmUn5z9pJv", "2NEBwqTRuNwgrwyTJokA4eabEMV7EW4C7dA", "2NANgiSUbf9wRG5CKwyfDS98wTSE8ucRjco", "2MsGp19WMSCzxHf6VuSgpexTfNRoRDQ6sQE", "2MuNy7X2hJFQi49Y4EFXAt8u7TRuxvzjUBJ", "2NAgceGZmSBTD9omeLR5s2BiALXZZwb1ciW", "2NCyfKhFsGntjy5HHm2rpjihYmVfQbhVPu5"]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cache requirements
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: Test with behave
+        run: |
+          python testnet-faucet.mempool.co.py "${{ matrix.address }}"
