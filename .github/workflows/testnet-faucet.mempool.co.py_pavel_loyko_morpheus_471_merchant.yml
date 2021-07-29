@@ -1,7 +1,6 @@
 name: Morpheus 471 merchant Pavel Loyko
 
 on:
-  push:
   schedule:
     - cron: '0 1/2 * * *'
 jobs:
