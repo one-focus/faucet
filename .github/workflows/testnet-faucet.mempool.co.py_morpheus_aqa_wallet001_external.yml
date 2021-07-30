@@ -1,6 +1,7 @@
 name: Morpheus external_001
 
 on:
+  push:
   schedule:
     - cron: '0 */2 * * *'
 jobs:
@@ -27,4 +28,4 @@ jobs:
           pip install -r requirements.txt
       - name: Test with behave
         run: |
-          python BTC/testnet-faucet.mempool.co.py "${{ matrix.address }}"
+          python testnet-faucet.mempool.co.py "${{ matrix.address }}"
