@@ -7,7 +7,7 @@ def init():
         'goog:chromeOptions': {
             # 'mobileEmulation': {'deviceName': 'iPhone X'},
             # 'window-size': ['1920,1080'],
-            'args': ['headless', 'window-size=1920,1080']
+            # 'args': ['headless', 'window-size=1920,1080']
         }
     }
     driver = webdriver.Chrome(desired_capabilities=caps)
