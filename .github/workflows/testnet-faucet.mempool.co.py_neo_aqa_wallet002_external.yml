@@ -2,7 +2,7 @@ name: Neo external_002
 
 on:
   schedule:
-    - cron: '50 */2 1-29/2 * *'
+    - cron: '50 */2 1-29/5 * *'
 jobs:
   build:
     runs-on: ubuntu-latest
