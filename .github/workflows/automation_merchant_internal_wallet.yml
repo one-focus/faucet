@@ -1,14 +1,14 @@
-name: Neo external_001
+name: Morpheus Automation_merchant_internal_wallet
 
 on:
   schedule:
-    - cron: '30 */2 1-29/5 * *'
+    - cron: '* 0,14 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        address: ["2MsLwbZuFiLQyNftAxCp6egxxjgStycaghR", "2NCmg5QpXztt8cwGGTdDTQ1NCNB4QhiPcrR", "2NCsKKNPhw1qR2akzo8m8iRMZVAp5aNmFSW", "2NCsKKNPhw1qR2akzo8m8iRMZVAp5aNmFSW", "2MzV1C5zH28njscFmot9J9GXSsxXu14Wag7", "2N1sNfgBrJjzx8u6JpUYxjtNnyAdK463yWq", "2MvXFnFaKHDb8rPcMimTd8ajCm3mXgDg1Jo", "2MxffVmjGnTmoJ3xd1t68ca3f3ZzNu9B4K4", "2NB7m3txJTQrpGq1Xyi4J9pnyvwwNxSG8RU", "2N5pNVYKiEjT3LSKoTBNRNWLyCr8Poia48j", "2N4oDr4DL7Lue6GQPaB9RLdb2JvZn8Fb4Xy"]
+        address: ["2MwcNnfLeYVA4BvniJukCmtR3vYbJZo4ZJg", "2MvZSSJ4aKpC5pJHyiVyHgFvio37r2RQeYi", "2MvXMLKWXzScowZBfL4uhvZsyLDjzmPx5fe", "2MvXcr93s1u8ubDQUxrEdeFMboVYx32Vh2P", "2MvQzihS1yVxrbrTUm3NTL1VcC5FSp2ipS3", "2NE7G2AWic1tZTcH3qxsd5P91FCP8Vgw2uk"]
     steps:
       - uses: actions/checkout@v2
       - name: Cache requirements
