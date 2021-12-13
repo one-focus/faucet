@@ -2,7 +2,7 @@ name: Morpheus Automation_merchant_external_wallet
 
 on:
   schedule:
-    - cron: '* 12/22 * * *'
+    - cron: '* 12,22 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
