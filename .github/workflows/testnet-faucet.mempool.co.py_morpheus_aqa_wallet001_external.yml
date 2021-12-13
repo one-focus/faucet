@@ -1,14 +1,14 @@
-name: Morpheus external_001
+name: Morpheus Automation_merchant_1
 
 on:
   schedule:
-    - cron: '0 */2 1-29/5 * *'
+    - cron: '0 8 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        address: ["2Mxe4i459UwkKTpx8edCYzSsVVuzUdVxSxS", "2NBABAmXjHaeNszikrJnoCXbgufUvRf1Dar", "2N5cdrf1bUxPRntKPKA5Kptr9WBJXNFZEEn", "2NAJpxmfEsBG68b64fbmRT7LGwmUn5z9pJv", "2NEBwqTRuNwgrwyTJokA4eabEMV7EW4C7dA", "2NANgiSUbf9wRG5CKwyfDS98wTSE8ucRjco", "2MsGp19WMSCzxHf6VuSgpexTfNRoRDQ6sQE", "2MuNy7X2hJFQi49Y4EFXAt8u7TRuxvzjUBJ", "2NAgceGZmSBTD9omeLR5s2BiALXZZwb1ciW", "2NCyfKhFsGntjy5HHm2rpjihYmVfQbhVPu5"]
+        address: ["2MvFAyt4erKgPRKACpuuMzUximfLBGcHREM", "2MvDTx5WQEQXcXHGWb5hPuxjQ75Af3b62nn", "2MvboPRW4UV3gx3EEzHQsgtPFXjQHL2E9Kp", "2Mv2sY1Tz5Z7yjLehg4yF2GxehxfTVbU44P", "2MuqxmUfa2b2kJZRkniuUbTBJDd1avCgwAf", "2MzTRNf7oyTFkE5nT5JemjHwdh9JoXQw1y7"]
     steps:
       - uses: actions/checkout@v2
       - name: Cache requirements
