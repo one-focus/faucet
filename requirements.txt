@@ -1,5 +1,5 @@
 antigate
 pillow
 pyTelegramBotAPI
-selenium
+selenium==3.141.0
 requests
