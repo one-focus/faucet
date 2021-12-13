@@ -1,4 +1,4 @@
-name: Morpheus internal_001
+name: Morpheus Automation_merchant_external_wallet_2
 
 on:
   schedule:
