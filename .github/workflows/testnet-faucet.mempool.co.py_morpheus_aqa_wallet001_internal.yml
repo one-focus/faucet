@@ -2,13 +2,13 @@ name: Morpheus internal_001
 
 on:
   schedule:
-    - cron: '10 */2 1-29/5 * *'
+    - cron: '0 10,20 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        address: ["2Mw7wLUSgcxAqxdEwtxXmwtzaSHcZgxYFVt", "2NAusN9npJdJut1qqsXdQK8tNGihAmjJkn2", "2NBWqJsLBtonyQe8U3N5wsavRgxEaAG2t5S", "2N7hM2wjPGjAGUqZjT5DJWmKGyYjXqtpxD3", "2MzcgunvoCYV5SsAhnWaWUkgcmdYozWDsrq", "2Mt4SaPRs3J8xkvsfSGmnjQh9qihNXTy6CE", "2N83LxATzLrcdnTkMTCUHGmmCEpsnCkC5T5", "2N7Ek5JL3nsy1AaAtdgKDizTx4ZwUG9aCfj", "2N1pcDrwWmVzbZC9m9HZrnCYc1N4LQsQwMz", "2MyYWbiKr3UBLRAMfjvryqPThdwiKsek4pa"]
+        address: ["2N31d2rdchHp5UexuexUv5gx7k4AmqW8bzm", "2MzJYfqGAej7LiJjV9c1YdfEFFpUQUeR6mM", "2MzGzExbhCB8zThhkzVN9Dnwg9Nxok9svKR", "2My5oRusDDfANMoLxiuirxwLvVt8yheB2Lk", "2MxwnLXkpMD6FCuzyFBwANhcG83r7se73Gu", "2N3FUnNFD5F1a87piTQfPoXT7JLgZwrMLby"]
     steps:
       - uses: actions/checkout@v2
       - name: Cache requirements
