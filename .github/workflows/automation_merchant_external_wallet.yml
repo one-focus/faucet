@@ -1,14 +1,14 @@
-name: Morpheus external_002
+name: Morpheus Automation_merchant_external_wallet
 
 on:
   schedule:
-    - cron: '20 */2 1-29/5 * *'
+    - cron: '* 12/22 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        address: ["2N74qMuUkfv3XbAZHUwYbYgpcU71yMDQe2x", 2N74qMuUkfv3XbAZHUwYbYgpcU71yMDQe2x", "2N1BxhN4j8Nff7XJzRSTPQe5nTzybDnZ5S9", "2N4YPQVhooJwPDgwZxjn6jeDDJyko4CLD58", "2N4oJSkk2ZeWtGXzF51EvfF7vMhjutzT4H9", "2N4WQBD7f3fuNiTtKtJd3HETtxd2rzRGkpU", "2N9shs4rJmFXein7fZQKND3S7x75P12qKR2", "2Mxcu2WWEnUPmj88rSMRsWsJkBh5q5ryfST", "2N4UwxXpD7dc5ZHXnCttxFHCzpkZ6qQD9d8", "2MywkhfyqathUGaN5xB36xXkvnXMHPfbdHx"]
+        address: ["2MxgQuX5Zr9Y8xgW8HZZxBqACorY83zXpZh", 2MxE9cWrNMwBUB4LMWkXHfNaJETaKP4Z8re", "2MxAz3tWAxndoHuX6tD995hrkqiFVdNAaqc", "2MwhWshuwJsxD3oLDe6XE5bVmMWrrSLAta1", "2MwEP7AfPt8NC65ACmcUhUtDZgGSxYiWUy4", "2MsrhTFcJ8dmsMeLqdgXL9bB4TxGqdWAUkc"]
     steps:
       - uses: actions/checkout@v2
       - name: Cache requirements
