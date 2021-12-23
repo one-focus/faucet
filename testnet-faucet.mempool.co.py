@@ -26,10 +26,10 @@ if __name__ == "__main__":
         driver.find_element_by_xpath('//button[@type="submit"]').click()
         status = driver.find_element_by_xpath('//div[@class="form-title-row"]').text
         if 'Transaction sent' in status:
-            bot.send_message(chat_id=-407923666, text=f'🟢 {status}')
+            # bot.send_message(chat_id=-407923666, text=f'🟢 {status}')
             break
         elif 'limits exceeded' in status:
-            bot.send_message(chat_id=-407923666, text=f"🔴 {status} for {address}")
+            # bot.send_message(chat_id=-407923666, text=f"🔴 {status} for {address}")
             break
         else:
             errors.append(status)
